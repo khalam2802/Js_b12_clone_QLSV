@@ -8,7 +8,7 @@ function renderDSSV(svArr) {
         <td>${sv.ma}</td>
         <td>${sv.ten}</td>
         <td>${sv.email}</td>
-        <td>0</td>
+        <td>${sv.tinhDTB()}</td>
         <td><button onclick="xoaSV(${sv.ma})" class="btn btn-danger">Xóa</button>
         <button onclick="suaSV(${sv.ma})"
          class="btn btn-secondary">Sửa </button></td>
@@ -28,18 +28,7 @@ function layThongTinTuForm() {
   var ly = document.getElementById("txtDiemLy").value * 1;
   var hoa = document.getElementById("txtDiemHoa").value * 1;
   // lưu lại
-  var sv = {
-    ma: ma,
-    ten: ten,
-    email: email,
-    matkhau: matkhau,
-    toan: toan,
-    hoa: hoa,
-    ly: ly,
-    tinhDTB: function () {
-      return (this.toan + this.ly + this.hoa) / 3;
-    },
-  };
+  var sv = new SinhVien(ma,ten,email,matkhau,toan,ly,hoa) 
   return sv;
 }
 function showThongTinLenForm(sv) {
