@@ -8,7 +8,7 @@ function renderDSSV(svArr) {
         <td>${sv.ma}</td>
         <td>${sv.ten}</td>
         <td>${sv.email}</td>
-        <td>${sv.tinhDTB()}</td>
+        <td>${sv.tinhDTB().toFixed(2)}</td>
         <td><button onclick="xoaSV(${sv.ma})" class="btn btn-danger">Xóa</button>
         <button onclick="suaSV(${sv.ma})"
          class="btn btn-secondary">Sửa </button></td>
